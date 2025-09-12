@@ -13,8 +13,8 @@ class DashboardController extends Controller
         $totalHospitals = Hospital::count();
         $totalPatients = Patient::count();
         $recentHospitals = Hospital::latest()->take(5)->get();
-        $recentPatients = Patient::with('hospital')->latest()->take(5)->get();
+        $hospitalsWithPatientCount = Hospital::withCount('patients')->orderBy('patients_count', 'desc')->get();
 
-        return view('dashboard', compact('totalHospitals', 'totalPatients', 'recentHospitals', 'recentPatients'));
+        return view('dashboard', compact('totalHospitals', 'totalPatients', 'recentHospitals', 'hospitalsWithPatientCount'));
     }
 }
