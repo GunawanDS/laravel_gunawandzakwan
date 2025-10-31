@@ -46,7 +46,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="no_telpon" class="form-label">No Telpon <span class="text-danger">*</span></label>
+                            <label for="no_telpon" class="form-label">No Telepon <span class="text-danger">*</span></label>
                             <input type="text" 
                                    class="form-control @error('no_telpon') is-invalid @enderror" 
                                    id="no_telpon" 
